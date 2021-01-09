@@ -1,15 +1,17 @@
 import React from 'react';
 import './App.css';
 import applicants from './data/MOCK_DATA.json';
+import ApplicantCard, { Applicant } from './components/ApplicantCard';
 
 function App() {
   return (
     <div className="App">
-      <ul>
+      <div>
         {
-          applicants.map((applicant) => <li>{applicant.lastName}</li>)
+          applicants.map((applicant) => (
+            <ApplicantCard applicant={applicant as Applicant} key={applicant.id} />))
         }
-      </ul>
+      </div>
     </div>
   );
 }
