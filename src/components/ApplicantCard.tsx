@@ -18,6 +18,10 @@ function ApplicantCard({ applicant }: { applicant: Applicant }): JSX.Element {
   function formatDate(date: string) {
     return dayjs(date).format('DD MMMM HH:mm');
   }
+  function formatCurrency(amount: number) {
+    const { format } = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', notation: 'compact' });
+    return format(amount);
+  }
   return (
     <div className={styles.card}>
       <p>{ `${applicant.firstName} ${applicant.lastName}` }</p>
@@ -34,8 +38,7 @@ function ApplicantCard({ applicant }: { applicant: Applicant }): JSX.Element {
       <p>
         Bid
         <span> </span>
-        { applicant.bid }
-        <span>€</span>
+        { formatCurrency(applicant.bid) }
       </p>
       )}
     </div>
