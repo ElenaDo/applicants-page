@@ -1,4 +1,5 @@
 import React from 'react';
+import dayjs from 'dayjs';
 
 import styles from './ApplicantCard.module.css';
 
@@ -14,6 +15,9 @@ export interface Applicant {
 }
 
 function ApplicantCard({ applicant }: { applicant: Applicant }): JSX.Element {
+  function formatDate(date: string) {
+    return dayjs(date).format('DD MMMM HH:mm');
+  }
   return (
     <div className={styles.card}>
       <p>{ `${applicant.firstName} ${applicant.lastName}` }</p>
@@ -23,7 +27,7 @@ function ApplicantCard({ applicant }: { applicant: Applicant }): JSX.Element {
       <p>
         <span>{ applicant.status === 'Appointment_Set' ? 'Appointment' : 'Viewed' }</span>
         <span> </span>
-        { applicant.appointmentDate }
+        { formatDate(applicant.appointmentDate) }
       </p>
       )}
       { applicant.bid && (
