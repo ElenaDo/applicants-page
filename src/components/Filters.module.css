@@ -1,0 +1,44 @@
+.filterBlock input, .filterBlock select {
+  padding: .8em;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  background-color: white;
+}
+.filterBlock form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.filterBlock form > *{
+  margin: 0.5em 1em;
+}
+.selectors {
+  display: flex;
+  flex-direction: row;
+}
+
+.selectors select:first-child{
+  margin-right: 1em;
+}
+
+span.searchWrapper {
+  display: flex;
+  position: relative;
+}
+span.searchWrapper>input {
+  padding-left: 3em;
+  width: 100%;
+}
+
+span.searchWrapper::before { 
+  content: "";
+  display: inline-block;
+  left: 1em;
+  width: 1.5em;
+  height: 100%;
+  position: absolute;
+  background-image: url('../assets/search.svg');
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+
