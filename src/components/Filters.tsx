@@ -5,7 +5,9 @@ import styles from './Filters.module.css';
 function Filters() {
   const [searchText, setSearchText] = useState('');
   function search(event: React.ChangeEvent<HTMLInputElement>) {
-    setSearchText(event.target.value);
+    const { value } = event.target;
+    setSearchText(value);
+    window.history.replaceState(null, '', `/page/?search=${value}`);
   }
   const statusTypes: StatusTypes[] = ['Interested', 'Appointment_Set', 'Property_Viewed', 'Offer_Accepted'];
   return (
