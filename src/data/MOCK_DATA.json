@@ -7,7 +7,7 @@
     "email": "bbradburne0@army.mil",
     "status": "Property_Viewed",
     "appointmentDate": "2020-12-28T10:00:00Z",
-    "bid": null
+    "bid": 270000
   },
   {
     "id": 2,
@@ -47,7 +47,7 @@
     "email": "tchalk4@gmpg.org",
     "status": "Property_Viewed",
     "appointmentDate": "2020-12-28T10:00:00Z",
-    "bid": null
+    "bid": 265000
   },
   {
     "id": 6,
@@ -87,7 +87,7 @@
     "email": "tchellingworth8@goo.ne.jp",
     "status": "Property_Viewed",
     "appointmentDate": "2020-12-21T15:00:00Z",
-    "bid": null
+    "bid": 260000
   },
   {
     "id": 10,
