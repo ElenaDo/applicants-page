@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { groupTitle } from '../helpers';
+import { getGroupTitle } from '../helpers';
 import styles from './Filters.module.css';
 
 function Filters() {
@@ -26,7 +26,7 @@ function Filters() {
           </select>
           <select>
             <option defaultValue="">Status</option>
-            { statusTypes.map((type) => <option value="type" key={type}>{groupTitle(type)}</option>) }
+            { statusTypes.map((type) => <option value="type" key={type}>{getGroupTitle(type)}</option>) }
           </select>
         </div>
       </form>

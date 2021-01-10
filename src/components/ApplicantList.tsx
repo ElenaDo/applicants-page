@@ -1,27 +1,18 @@
 import React from 'react';
 import ApplicantCard from './ApplicantCard';
 
-import { groupTitle } from '../helpers';
+import { getGroupTitle, groupApplicants } from '../helpers';
 import styles from './ApplicantList.module.css';
 
 function ApplicantList({ applicants }: { applicants: Applicant[] }) {
-  const grouped = applicants.reduce((acc, current) => {
-    acc[current.status].push(current);
-    return acc;
-  }, {
-    // explicitly set object keys to preserve order
-    Appointment_Set: [] as Applicant[],
-    Property_Viewed: [] as Applicant[],
-    Interested: [] as Applicant[],
-    Offer_Accepted: [] as Applicant[],
-  });
+  const grouped = groupApplicants(applicants);
   return (
     <div>
       {
         Object.keys(grouped).map((groupName) => (
           <div key={groupName}>
             <h3 className={styles.groupTitle}>
-              {groupTitle(groupName)}
+              {getGroupTitle(groupName)}
               <span> </span>
               (
               {grouped[groupName as StatusTypes].length}
