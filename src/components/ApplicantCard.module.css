@@ -1,6 +1,32 @@
 .card {
+  text-align: center;
   border-radius: 0.3rem;
   border: 1px solid lightgrey;
   margin: 1em 1em;
   padding: 1em;
+}
+.card p{
+  margin: 0.3em;
+}
+.initials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em auto;
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  background-color: lightpink;
+}
+p.highlight {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #9d9d9d;
+  padding: 0.2em 0.5em;
+  color: white;
+  font-size: 0.8em;
+}
+
+p.highlight.bid {
+  background-color: #fdbd16;
 }

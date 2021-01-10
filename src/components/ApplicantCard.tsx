@@ -28,21 +28,21 @@ function ApplicantCard({ applicant }: { applicant: Applicant }): JSX.Element {
   }
   return (
     <div className={styles.card}>
-      <div>
+      <div className={`${styles.initials} text-bold`}>
         <p>{ getInitials() }</p>
       </div>
-      <p>{ `${applicant.firstName} ${applicant.lastName}` }</p>
+      <p className="text-bold">{ `${applicant.firstName} ${applicant.lastName}` }</p>
       <p>{ applicant.phoneNumber }</p>
       <p>{ applicant.email }</p>
       { applicant.appointmentDate && (
-      <p>
+      <p className={`${styles.highlight} text-bold text-upper `}>
         <span>{ applicant.status === 'Appointment_Set' ? 'Appointment' : 'Viewed' }</span>
         <span> </span>
         { formatDate(applicant.appointmentDate) }
       </p>
       )}
       { applicant.bid && (
-      <p>
+      <p className={`${styles.highlight} ${styles.bid} text-bold`}>
         Bid
         <span> </span>
         { formatCurrency(applicant.bid) }
