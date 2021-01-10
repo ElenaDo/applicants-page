@@ -22,8 +22,15 @@ function ApplicantCard({ applicant }: { applicant: Applicant }): JSX.Element {
     const { format } = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', notation: 'compact' });
     return format(amount);
   }
+  function getInitials() {
+    const { firstName, lastName } = applicant;
+    return `${firstName[0]}${lastName[0]}`;
+  }
   return (
     <div className={styles.card}>
+      <div>
+        <p>{ getInitials() }</p>
+      </div>
       <p>{ `${applicant.firstName} ${applicant.lastName}` }</p>
       <p>{ applicant.phoneNumber }</p>
       <p>{ applicant.email }</p>
