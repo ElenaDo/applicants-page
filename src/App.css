@@ -1,2 +1,27 @@
-.text-upper{text-transform: uppercase;}
-.text-bold{font-weight: bolder;}
+/* global styles and helper classes */
+.back-icon {
+  margin: auto 1em;
+  padding: 0;
+}
+.button-link {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  border-radius: 30px;
+  padding: 0.5em;
+}
+.button-link:hover{
+  background-color: lightgray;
+}
+.text-upper {
+  text-transform: uppercase;
+}
+.text-bold {
+  font-weight: bolder;
+}
+.display-inline-block {
+  display: inline-block;
+}
+.display-flex {
+  display: flex;
+}
