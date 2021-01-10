@@ -11,6 +11,6 @@ interface Applicant {
   bid: number | null,
 }
 
-interface ApplicantGroups {
-  [index: StatusTypes]: Applicant[]
+type ApplicantGroups = {
+  [key in StatusTypes]: Applicant[]
 }
