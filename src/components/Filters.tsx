@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { groupTitle } from '../helpers';
 import styles from './Filters.module.css';
 
 function Filters() {
@@ -6,6 +7,7 @@ function Filters() {
   function search(event: React.ChangeEvent<HTMLInputElement>) {
     setSearchText(event.target.value);
   }
+  const statusTypes: StatusTypes[] = ['Interested', 'Appointment_Set', 'Property_Viewed', 'Offer_Accepted'];
   return (
     <div className={styles.filterBlock}>
       <form onSubmit={(e) => e.preventDefault()}>
@@ -24,7 +26,7 @@ function Filters() {
           </select>
           <select>
             <option defaultValue="">Status</option>
-            <option value="Appointment_set">Appointment Set</option>
+            { statusTypes.map((type) => <option value="type" key={type}>{groupTitle(type)}</option>) }
           </select>
         </div>
       </form>

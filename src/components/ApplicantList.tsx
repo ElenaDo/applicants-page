@@ -1,6 +1,7 @@
 import React from 'react';
 import ApplicantCard from './ApplicantCard';
 
+import { groupTitle } from '../helpers';
 import styles from './ApplicantList.module.css';
 
 function ApplicantList({ applicants }: { applicants: Applicant[] }) {
@@ -14,9 +15,6 @@ function ApplicantList({ applicants }: { applicants: Applicant[] }) {
     Interested: [] as Applicant[],
     Offer_Accepted: [] as Applicant[],
   });
-  function groupTitle(title: string) {
-    return title.replace('_', ' ');
-  }
   return (
     <div>
       {
