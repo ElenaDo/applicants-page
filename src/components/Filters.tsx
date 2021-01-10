@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getGroupTitle } from '../helpers';
 import styles from './Filters.module.css';
 
@@ -7,8 +7,14 @@ function Filters() {
   function search(event: React.ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
     setSearchText(value);
-    window.history.replaceState(null, '', `/page/?search=${value}`);
+    window.history.replaceState(null, '', value ? `/page/?search=${value}` : '/');
   }
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get('search');
+    if (typeof (searchQuery) === 'string') setSearchText(searchQuery);
+  }, []);
+
   const statusTypes: StatusTypes[] = ['Interested', 'Appointment_Set', 'Property_Viewed', 'Offer_Accepted'];
   return (
     <div className={styles.filterBlock}>
