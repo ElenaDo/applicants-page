@@ -1,0 +1,13 @@
+/* global styles and helper classes */
+.text-upper {
+  text-transform: uppercase;
+}
+.text-bold {
+  font-weight: bolder;
+}
+.display-inline-block {
+  display: inline-block;
+}
+.display-flex {
+  display: flex;
+}

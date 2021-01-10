@@ -1,0 +1,18 @@
+.backIcon {
+  margin: auto 1em;
+  padding: 0;
+}
+.buttonLink {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  border-radius: 30px;
+  padding: 0.5em;
+}
+.buttonLink:hover {
+  background-color: lightgray;
+}
+.upperPanel{
+  display: flex;
+  justify-content: space-between;
+}
