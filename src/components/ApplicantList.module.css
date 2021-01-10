@@ -1,3 +1,8 @@
 .groupTitle {
   margin: 1em;
 }
+.groupContent {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
