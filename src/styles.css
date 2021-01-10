@@ -11,3 +11,6 @@
 .display-flex {
   display: flex;
 }
+.no-break {
+  white-space: nowrap;
+}

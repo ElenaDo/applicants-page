@@ -37,7 +37,7 @@ function ApplicantCard({ applicant }: { applicant: Applicant }): JSX.Element {
       <p className={`${styles.highlight} text-bold text-upper `}>
         <span>{ applicant.status === 'Appointment_Set' ? 'Appointment' : 'Viewed' }</span>
         <span> </span>
-        { formatDate(applicant.appointmentDate) }
+        <span className="no-break">{ formatDate(applicant.appointmentDate) }</span>
       </p>
       )}
       { applicant.bid && (
