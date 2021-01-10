@@ -22,7 +22,13 @@ function ApplicantList({ applicants }: { applicants: Applicant[] }) {
       {
         Object.keys(grouped).map((groupName) => (
           <div key={groupName}>
-            <h3 className={styles.groupTitle}>{groupTitle(groupName)}</h3>
+            <h3 className={styles.groupTitle}>
+              {groupTitle(groupName)}
+              <span> </span>
+              (
+              {grouped[groupName as StatusTypes].length}
+              )
+            </h3>
             <div className={styles.groupContent}>
               {
                 grouped[groupName as StatusTypes].map((applicant: Applicant) => (
