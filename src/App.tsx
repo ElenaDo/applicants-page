@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles.css';
 import styles from './App.module.css';
 import applicants from './data/MOCK_DATA.json';
@@ -8,6 +8,7 @@ import Stats from './components/Stats';
 import backIcon from './assets/back.svg';
 
 function App() {
+  const [filtered, setFiltered] = useState(applicants as Applicant[]);
   return (
     <div className="App">
       <div className={styles.upperPanel}>
@@ -19,8 +20,8 @@ function App() {
         </span>
         <Stats applicants={applicants as Applicant[]} />
       </div>
-      <Filters />
-      <ApplicantList applicants={applicants as Applicant[]} />
+      <Filters applicants={applicants as Applicant[]} setFiltered={setFiltered} />
+      <ApplicantList applicants={filtered as Applicant[]} />
     </div>
   );
 }
