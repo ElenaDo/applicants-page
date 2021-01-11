@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { homepage } from '../package.json';
 import './styles.css';
 import styles from './App.module.css';
 import ApplicantList from './components/ApplicantList';
@@ -23,7 +24,10 @@ function App() {
       await new Promise((res, rej) => {
         setTimeout(res, 1000);
       });
-      const response = await axios.get('/data/MOCK_DATA.json');
+
+      const prefix = process.env.PUBLIC_URL;
+      const path = '/data/MOCK_DATA.json';
+      const response = await axios.get(prefix + path);
       setApplicants(response.data);
     } catch (e) {
       setError(e.message);

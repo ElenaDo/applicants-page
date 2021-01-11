@@ -7,12 +7,13 @@ function Filters({ applicants, setFiltered }:
     applicants: Applicant[],
     setFiltered: React.Dispatch<React.SetStateAction<Applicant[]>>
   }) {
+  const publicUrl = process.env.PUBLIC_URL;
   const [searchText, setSearchText] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
   function search(event: React.ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
     setSearchText(value);
-    window.history.replaceState(null, '', value ? `/page/?search=${value}` : '/');
+    window.history.replaceState(null, '', value ? `${publicUrl}/?search=${value}` : '/');
   }
   function handleFilterChange(event: React.ChangeEvent<HTMLSelectElement>) {
     const { value } = event.target;
