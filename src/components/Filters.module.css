@@ -1,7 +1,7 @@
 .filterBlock input, .filterBlock select {
   padding: .8em;
   border: 1px solid lightgrey;
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: white;
 }
 .filterBlock form {
@@ -14,7 +14,7 @@
     flex-direction: row;
   }
   .filterBlock .selectors{
-    margin-left: 0;
+    margin-left: 1em;
   }
 }
 .filterBlock form > *{
