@@ -8,27 +8,37 @@ function Filters({ applicants, setFiltered }:
     setFiltered: React.Dispatch<React.SetStateAction<Applicant[]>>
   }) {
   const [searchText, setSearchText] = useState('');
+  const [filterStatus, setFilterStatus] = useState('');
   function search(event: React.ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
     setSearchText(value);
     window.history.replaceState(null, '', value ? `/page/?search=${value}` : '/');
-    filterText();
+  }
+  function handleFilterChange(event: React.ChangeEvent<HTMLSelectElement>) {
+    const { value } = event.target;
+    setFilterStatus(value);
   }
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const searchQuery = urlParams.get('search');
     if (typeof (searchQuery) === 'string') setSearchText(searchQuery);
   }, []);
-
+  useEffect(filterApplicants, [searchText, filterStatus, applicants, setFiltered]);
   function checkIncludes(where: string, text: string): boolean {
     return where.toLowerCase().includes(text.toLocaleLowerCase());
   }
 
-  function filterText() {
+  function checkFilterStatus(where: Applicant, status: StatusTypes | string): boolean {
+    if (status === '') return true;
+    return where.status === status;
+  }
+
+  function filterApplicants() {
     const filtered = applicants.filter((applicant) => {
-      const keep = checkIncludes(applicant.firstName, searchText)
+      const keep = (checkIncludes(applicant.firstName, searchText)
       || checkIncludes(applicant.lastName, searchText)
-      || checkIncludes(applicant.email, searchText);
+      || checkIncludes(applicant.email, searchText))
+      && checkFilterStatus(applicant, filterStatus);
       return keep;
     });
     setFiltered(filtered);
@@ -48,12 +58,13 @@ function Filters({ applicants, setFiltered }:
         </span>
         <div className={styles.selectors}>
           <select>
-            <option defaultValue="">Bids</option>
+            <option value="">Bids</option>
             <option value="withBids">With bids</option>
           </select>
-          <select>
-            <option defaultValue="">Status</option>
-            { statusTypes.map((type) => <option value="type" key={type}>{getGroupTitle(type)}</option>) }
+          <select onChange={handleFilterChange} value={filterStatus}>
+            <option value="">Status</option>
+            { statusTypes
+              .map((type) => <option value={type} key={type}>{getGroupTitle(type)}</option>)}
           </select>
         </div>
       </form>
