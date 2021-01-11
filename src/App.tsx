@@ -10,8 +10,8 @@ import Error from './components/Error';
 import backIcon from './assets/back.svg';
 
 function App() {
-  const [applicants, setApplicants] = useState([]);
-  const [filtered, setFiltered] = useState(applicants as Applicant[]);
+  const [applicants, setApplicants] = useState([] as Applicant[]);
+  const [filtered, setFiltered] = useState(applicants);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -40,12 +40,12 @@ function App() {
           </button>
           <h2 className="display-inline-block">Applicants</h2>
         </span>
-        <Stats applicants={applicants as Applicant[]} />
+        <Stats applicants={applicants} />
       </div>
-      <Filters applicants={applicants as Applicant[]} setFiltered={setFiltered} />
+      <Filters applicants={applicants} setFiltered={setFiltered} />
       {error && <Error message={error} reload={fetchData} />}
       {loading ? <Loading />
-        : <ApplicantList applicants={filtered as Applicant[]} />}
+        : <ApplicantList applicants={filtered} />}
     </div>
   );
 }
