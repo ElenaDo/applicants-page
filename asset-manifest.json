@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/applicants-page/static/css/main.a9187b50.chunk.css",
-    "main.js": "/applicants-page/static/js/main.2cfd688e.chunk.js",
-    "main.js.map": "/applicants-page/static/js/main.2cfd688e.chunk.js.map",
-    "runtime-main.js": "/applicants-page/static/js/runtime-main.d90509ce.js",
-    "runtime-main.js.map": "/applicants-page/static/js/runtime-main.d90509ce.js.map",
-    "static/js/2.4b343267.chunk.js": "/applicants-page/static/js/2.4b343267.chunk.js",
-    "static/js/2.4b343267.chunk.js.map": "/applicants-page/static/js/2.4b343267.chunk.js.map",
-    "static/js/3.19de1761.chunk.js": "/applicants-page/static/js/3.19de1761.chunk.js",
-    "static/js/3.19de1761.chunk.js.map": "/applicants-page/static/js/3.19de1761.chunk.js.map",
+    "main.css": "/applicants-page/static/css/main.b1382c1f.chunk.css",
+    "main.js": "/applicants-page/static/js/main.ba6538e1.chunk.js",
+    "main.js.map": "/applicants-page/static/js/main.ba6538e1.chunk.js.map",
+    "runtime-main.js": "/applicants-page/static/js/runtime-main.78b69e39.js",
+    "runtime-main.js.map": "/applicants-page/static/js/runtime-main.78b69e39.js.map",
+    "static/js/2.1f429b11.chunk.js": "/applicants-page/static/js/2.1f429b11.chunk.js",
+    "static/js/2.1f429b11.chunk.js.map": "/applicants-page/static/js/2.1f429b11.chunk.js.map",
+    "static/js/3.57114704.chunk.js": "/applicants-page/static/js/3.57114704.chunk.js",
+    "static/js/3.57114704.chunk.js.map": "/applicants-page/static/js/3.57114704.chunk.js.map",
     "index.html": "/applicants-page/index.html",
-    "static/css/main.a9187b50.chunk.css.map": "/applicants-page/static/css/main.a9187b50.chunk.css.map",
-    "static/js/2.4b343267.chunk.js.LICENSE.txt": "/applicants-page/static/js/2.4b343267.chunk.js.LICENSE.txt",
+    "static/css/main.b1382c1f.chunk.css.map": "/applicants-page/static/css/main.b1382c1f.chunk.css.map",
+    "static/js/2.1f429b11.chunk.js.LICENSE.txt": "/applicants-page/static/js/2.1f429b11.chunk.js.LICENSE.txt",
     "static/media/back.043a6139.svg": "/applicants-page/static/media/back.043a6139.svg",
     "static/media/Filters.module.css": "/applicants-page/static/media/search.20cba234.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d90509ce.js",
-    "static/js/2.4b343267.chunk.js",
-    "static/css/main.a9187b50.chunk.css",
-    "static/js/main.2cfd688e.chunk.js"
+    "static/js/runtime-main.78b69e39.js",
+    "static/js/2.1f429b11.chunk.js",
+    "static/css/main.b1382c1f.chunk.css",
+    "static/js/main.ba6538e1.chunk.js"
   ]
 }
