@@ -19,6 +19,10 @@ function App() {
     setLoading(true);
     setError('');
     try {
+      // artificial delay to see loading
+      await new Promise((res, rej) => {
+        setTimeout(res, 1000);
+      });
       const response = await axios.get('/data/MOCK_DATA.json');
       setApplicants(response.data);
     } catch (e) {
