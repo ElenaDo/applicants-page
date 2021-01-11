@@ -10,6 +10,7 @@ function ApplicantList({ applicants }: { applicants: Applicant[] }) {
     <div>
       {
         Object.keys(grouped).map((groupName) => (
+          (grouped[groupName as StatusTypes].length > 0) && (
           <div key={groupName}>
             <h3 className={styles.groupTitle}>
               {getGroupTitle(groupName)}
@@ -26,6 +27,7 @@ function ApplicantList({ applicants }: { applicants: Applicant[] }) {
               }
             </div>
           </div>
+          )
         ))
       }
     </div>
