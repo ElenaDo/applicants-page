@@ -1,0 +1,16 @@
+@keyframes blink {
+  0% {
+    color: gray;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: gray;
+  }
+}
+.loading {
+  animation: blink 1s infinite;
+  font-size: x-large;
+  margin-top: 1em;
+}
