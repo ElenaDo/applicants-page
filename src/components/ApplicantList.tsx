@@ -5,6 +5,7 @@ import { getGroupTitle, groupApplicants } from '../helpers';
 import styles from './ApplicantList.module.css';
 
 function ApplicantList({ applicants }: { applicants: Applicant[] }) {
+  if (!applicants.length) return <h3>Nothing to display</h3>;
   const grouped = groupApplicants(applicants);
   return (
     <div>
