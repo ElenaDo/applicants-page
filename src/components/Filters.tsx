@@ -13,7 +13,7 @@ function Filters({ applicants, setFiltered }:
   function search(event: React.ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
     setSearchText(value);
-    window.history.replaceState(null, '', value ? `${publicUrl}/?search=${value}` : '/');
+    window.history.replaceState(null, '', value ? `${publicUrl}/?search=${value}` : publicUrl);
   }
   function handleFilterChange(event: React.ChangeEvent<HTMLSelectElement>) {
     const { value } = event.target;
