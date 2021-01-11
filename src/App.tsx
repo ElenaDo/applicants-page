@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { homepage } from '../package.json';
-import './styles.css';
 import styles from './App.module.css';
 import ApplicantList from './components/ApplicantList';
 import Filters from './components/Filters';

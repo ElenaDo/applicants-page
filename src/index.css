@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* global styles and helper classes */
+.text-upper {
+  text-transform: uppercase;
+}
+.text-bold {
+  font-weight: bolder;
+}
+.display-inline-block {
+  display: inline-block;
+}
+.display-flex {
+  display: flex;
+}
+.no-break {
+  white-space: nowrap;
+}
