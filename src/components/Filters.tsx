@@ -10,6 +10,7 @@ function Filters({ applicants, setFiltered }:
   const publicUrl = process.env.PUBLIC_URL;
   const [searchText, setSearchText] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
+  const [filterBid, setFilterBid] = useState('');
   function search(event: React.ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
     setSearchText(value);
@@ -19,12 +20,16 @@ function Filters({ applicants, setFiltered }:
     const { value } = event.target;
     setFilterStatus(value);
   }
+  function handleBidChange(event: React.ChangeEvent<HTMLSelectElement>) {
+    const { value } = event.target;
+    setFilterBid(value);
+  }
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const searchQuery = urlParams.get('search');
     if (typeof (searchQuery) === 'string') setSearchText(searchQuery);
   }, []);
-  useEffect(filterApplicants, [searchText, filterStatus, applicants, setFiltered]);
+  useEffect(filterApplicants, [searchText, filterBid, filterStatus, applicants, setFiltered]);
   function checkIncludes(where: string, text: string): boolean {
     return where.toLowerCase().includes(text.toLocaleLowerCase());
   }
@@ -34,12 +39,19 @@ function Filters({ applicants, setFiltered }:
     return where.status === status;
   }
 
+  function checkFilterBids(where: Applicant, bid: string): boolean {
+    if (!bid) return true;
+    if (bid === 'withBids') return where.bid !== null;
+    return where.bid === null;
+  }
+
   function filterApplicants() {
     const filtered = applicants.filter((applicant) => {
       const keep = (checkIncludes(applicant.firstName, searchText)
       || checkIncludes(applicant.lastName, searchText)
       || checkIncludes(applicant.email, searchText))
-      && checkFilterStatus(applicant, filterStatus);
+      && checkFilterStatus(applicant, filterStatus)
+      && checkFilterBids(applicant, filterBid);
       return keep;
     });
     setFiltered(filtered);
@@ -58,9 +70,10 @@ function Filters({ applicants, setFiltered }:
           />
         </span>
         <div className={styles.selectors}>
-          <select>
+          <select onChange={handleBidChange} value={filterBid}>
             <option value="">Bids</option>
             <option value="withBids">With bids</option>
+            <option value="noBids">No bids</option>
           </select>
           <select onChange={handleFilterChange} value={filterStatus}>
             <option value="">Status</option>
